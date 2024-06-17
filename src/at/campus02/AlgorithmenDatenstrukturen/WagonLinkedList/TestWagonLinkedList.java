@@ -3,9 +3,9 @@ package at.campus02.AlgorithmenDatenstrukturen.WagonLinkedList;
 public class TestWagonLinkedList {
     public static void main(String[] args) {
         WagonLinkedList wagonLinkedList = new WagonLinkedList();
-
+        System.out.println("******************");
         wagonLinkedList.printList();
-
+        System.out.println("******************");
         // Hinzufügen
         wagonLinkedList.insertWagonAtFirstPos("Speisewagen 4712");
         wagonLinkedList.insertWagonAtFirstPos("Schlafabteil 7");

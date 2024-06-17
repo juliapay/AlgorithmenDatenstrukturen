@@ -7,26 +7,25 @@ public class WagonLinkedList {
 
     // *** Methoden ***
 
+
     public Node getFirst() {
-        // TODO
-        return null;
+        return first;
     }
 
     public void setFirst(Node first) {
-        // TODO
+        this.first = first;
     }
 
     public Node getLast() {
-        // TODO
-        return null;
+        return last;
     }
 
     public void setLast(Node last) {
-        // TODO
+        this.last = last;
     }
 
     void insertWagonAtFirstPos(String wagonId) {
-Node newNode = new Node(wagonId);
+        Node newNode = new Node(wagonId);
 
         if (first == null) {
             //code wenn liste leer ist
