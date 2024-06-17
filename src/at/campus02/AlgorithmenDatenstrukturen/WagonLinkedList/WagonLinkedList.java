@@ -40,7 +40,20 @@ Node newNode = new Node(wagonId);
     }
 
     void removeWagonFromLastPos() {
-        // TODO
+        if (last == null) {
+            // Die Liste ist bereits leer
+            return;
+        }
+
+        if (first == last) {
+            // Es gibt nur einen Knoten in der Liste
+            first = null;
+            last = null;
+        } else {
+            // Mehrere Knoten in der Liste
+            last = last.prev;
+            last.setNext(null);
+        }
     }
 
     void printList() {
