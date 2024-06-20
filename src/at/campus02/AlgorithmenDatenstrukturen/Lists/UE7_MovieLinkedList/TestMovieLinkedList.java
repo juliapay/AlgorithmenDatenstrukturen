@@ -1,4 +1,4 @@
-package at.campus02.AlgorithmenDatenstrukturen.UE7_MovieLinkedList;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.UE7_MovieLinkedList;
 
 public class TestMovieLinkedList {
 

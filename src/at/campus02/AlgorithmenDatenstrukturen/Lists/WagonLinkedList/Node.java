@@ -1,4 +1,4 @@
-package at.campus02.AlgorithmenDatenstrukturen.WagonLinkedList;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.WagonLinkedList;
 
 public class Node {
     // *** Membervariablen ***

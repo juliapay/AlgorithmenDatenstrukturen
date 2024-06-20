@@ -1,4 +1,4 @@
-package at.campus02.AlgorithmenDatenstrukturen.UE3_BookStack;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.UE3_BookStack;
 
 import org.junit.Test;
 
@@ -24,10 +24,10 @@ public class TestBookStack
 
         bookStack.pop();
         assertEquals("zwei Bücher", 2, bookStack.getCount());
-
+        System.out.println(bookStack.getCount());
         bookStack.pop();
         assertEquals("ein Buch", 1, bookStack.getCount());
-
+        System.out.println(bookStack.getCount());
         bookStack.pop();
         assertEquals("leerer Stapel", 0, bookStack.getCount());
     }

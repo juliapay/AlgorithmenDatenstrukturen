@@ -1,4 +1,4 @@
-package at.campus02.AlgorithmenDatenstrukturen.UE1_TodoLinkedList;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.UE1_TodoLinkedList;
 
 public class TodoLinkedList {
     // *** Membervariablen ***

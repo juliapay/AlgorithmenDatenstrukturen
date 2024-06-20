@@ -1,4 +1,4 @@
-package at.campus02.AlgorithmenDatenstrukturen.SimpleLinkedList;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.SimpleLinkedList;
 
 public class Node {
     private String lebensmittel;    // =WERT

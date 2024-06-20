@@ -1,4 +1,6 @@
-package at.campus02.AlgorithmenDatenstrukturen.SimpleLinkedList;
+package at.campus02.AlgorithmenDatenstrukturen.Lists.SimpleLinkedList;
+
+import at.campus02.AlgorithmenDatenstrukturen.Lists.SimpleLinkedList.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
