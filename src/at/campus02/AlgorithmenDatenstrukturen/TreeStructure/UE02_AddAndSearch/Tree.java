@@ -69,8 +69,7 @@ public class Tree {
     }
 
     public Node searchNumber(int number) {
-        System.out.print("SearchNumber - ");
-
+        // return searchNumberLoop(number);
         // TODO: Entweder Variante 1 oder 2 einkommentieren
         // Variante 1: Aufruf Rekursiv
         return searchNumberRecursive(root, number);
@@ -80,14 +79,52 @@ public class Tree {
 
     // Suche - Variante Rekursion
     private Node searchNumberRecursive(Node currentNode, int number) {
-        // TODO
-        return null;
+        // Basisfall: Wenn der aktuelle Knoten null ist oder den gesuchten Wert enthält
+        if (currentNode == null || currentNode.getNumber() == number) {
+            return currentNode;
+        }
+        // Wenn der gesuchte Wert kleiner ist als der Wert des aktuellen Knotens
+        else if (number < currentNode.getNumber()) {
+            // Dann links weitergehen
+            if (currentNode.getLeft() != null) {
+                return searchNumberRecursive(currentNode.getLeft(), number);
+            }
+        }
+        // Wenn der gesuchte Wert größer ist als der Wert des aktuellen Knotens
+        else {
+            return searchNumberRecursive(currentNode.getRight(), number);
+        }
+        // Wenn der gesuchte Wert nicht gefunden wurde, gibt den aktuellen Knoten zurück
+        return currentNode;
     }
 
     // Suche - Variante Schleife
     private Node searchNumberLoop(int number) {
-        // TODO
-        return null;
+        Node current = root;
+        System.out.print("SearchNumber - ");
+        if (root == null) {
+            System.out.println("kein Baum vorhanden");
+            return null;
+        } else {
+            while (true) {
+                //neuer Wert ist kleiner
+                if (number < current.getNumber()) {
+                    //dann linksweitergehen
+                    if (current.getLeft() != null) {
+                        current = current.getLeft();
+                    } else {
+                        return current;
+                    }
+                } else {
+                    //dann rechts weitergehen
+                    if (current.getRight() != null) {
+                        current = current.getRight();
+                    } else {
+                        return current;
+                    }
+                }
+            }
+        }
     }
 
     /**
