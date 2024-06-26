@@ -1,37 +1,30 @@
 package at.campus02.AlgorithmenDatenstrukturen.TreeStructure.UE04_RotateTree;
 
-public class Tree
-{
+public class Tree {
     private Node root;
 
-    public void addNode(TvShow newTvShow)
-    {
+    public void addNode(TvShow newTvShow) {
         Node newNode = new Node(newTvShow);
 
         if (root == null) {
-            // TODO: Was tun, wenn Baum leer ist?
-        }
-        else {
+            root = newNode;
+        } else {
             addNodeRecursive(root, newNode);
         }
     }
 
-    private void addNodeRecursive(Node currentNode, Node newNode)
-    {
+    private void addNodeRecursive(Node currentNode, Node newNode) {
         // TODO: Implementierung hinzufügen
     }
 
-    public int getMaxDepth()
-    {
+    public int getMaxDepth() {
         return getMaxDepth(root);
     }
 
-    private int getMaxDepth(Node currentTree)
-    {
+    private int getMaxDepth(Node currentTree) {
         if (currentTree == null)
             return 0;
-        else
-        {
+        else {
             int leftDepth = getMaxDepth(currentTree.getLeft());
             int rightDepth = getMaxDepth(currentTree.getRight());
 
@@ -44,44 +37,39 @@ public class Tree
 
     /**
      * Knoten nach rechts rotieren:
-     *
-     *       N				 L
-     *      / \             / \
-     *     L   r     =>    ll  N
-     *    / \			      / \
-     *   ll lr               lr  r
+     * <p>
+     * N				 L
+     * / \             / \
+     * L   r     =>    ll  N
+     * / \			      / \
+     * ll lr               lr  r
      */
-    public void rotateRight()
-    {
+    public void rotateRight() {
         // TODO: Implementierung hinzufügen
     }
 
 
     /**
      * Knoten nach links rotieren:
-     *
-     *       N				 R
-     *      / \             / \
-     *     l   R     =>    N  rr
-     *        / \	      / \
-     *       rl rr       l  rl
+     * <p>
+     * N				 R
+     * / \             / \
+     * l   R     =>    N  rr
+     * / \	      / \
+     * rl rr       l  rl
      */
-    public void rotateLeft()
-    {
+    public void rotateLeft() {
         // TODO: Implementierung hinzufügen
     }
 
-    public int getNodeCount()
-    {
+    public int getNodeCount() {
         return getNodeCount(root);
     }
 
-    private int getNodeCount(Node currentNode)
-    {
+    private int getNodeCount(Node currentNode) {
         if (currentNode == null)
             return 0;
-        else
-        {
+        else {
             Node leftNode = currentNode.getLeft();
             if (leftNode != null)
                 return (1 + getNodeCount(leftNode));
