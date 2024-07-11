@@ -93,7 +93,11 @@ public class DictionaryHash
 
     public int calcIndexWithDoubleHashing(String word, int factor)
     {
-        // TODO: Implementieren Sie die Berechnung mit dem Double-Hashing-Verfahren
-        return 0;
+        int baseHashValue = Math.abs(word.hashCode());
+
+        int h1 = baseHashValue % dictionary.length;
+        int h2 = baseHashValue % 31 + 13;
+
+        return (h1 + (factor * h2)) % dictionary.length;
     }
 }

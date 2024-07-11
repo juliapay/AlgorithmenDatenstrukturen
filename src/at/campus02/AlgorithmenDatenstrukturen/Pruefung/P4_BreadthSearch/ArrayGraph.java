@@ -7,13 +7,13 @@ import java.util.Queue;
 public class ArrayGraph {
     private int[][] graph;
     private int size;
+
     public ArrayGraph(int size) {
         graph = new int[size][size];
         this.size = size;
     }
 
-    public boolean addEdge(int from, int to)
-    {
+    public boolean addEdge(int from, int to) {
         if ((from >= size) || (to >= size))
             return false;
 
@@ -22,10 +22,24 @@ public class ArrayGraph {
         return true;
     }
 
-    public void performBreadthSearch(int startVertex, ArrayList<Integer> visited)
-    {
+    public void performBreadthSearch(int startVertex, ArrayList<Integer> visited) {
         // TODO: Lösung implementieren
+
     }
 
+    public void performDepthSearch(int startVertex, ArrayList<Integer> visited) {
 
+        visited.add(startVertex);
+        for (int i = 0; i < size; i++) {
+            //wo gibts eine Verbindung siehe oben
+            //        graph[from][to] = 1;
+            //        graph[to][from] = 1;
+            //       also bei Verbindung ist eine 1 eingetrgen
+            if (graph[startVertex][i] == 1) {
+                if (!visited.contains(i)) {
+                    performDepthSearch(i, visited);
+                }
+            }
+        }
+    }
 }
