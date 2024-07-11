@@ -2,33 +2,39 @@ package at.campus02.AlgorithmenDatenstrukturen.Lists.UE7_MovieLinkedList;
 
 public class Node {
     // *** Membervariablen ***
-    // TODO
+    private String movieTitle;
+    private Node next;
+    private Node prev;
 
     // *** Methoden ***
-    public Node(String movie) {
-        // TODO
+
+    public Node(String movieTitle) {
+        this.movieTitle = movieTitle;
+        this.next = next;
+        this.prev = prev;
     }
 
     public String getMovieTitle() {
-        // TODO
-        return null;
+        return movieTitle;
     }
 
-    public void setNext(Node next) {
-        // TODO
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
     }
 
     public Node getNext() {
-        // TODO
-        return null;
+        return next;
     }
 
-    public void setPrev(Node prev) {
-        // TODO
+    public void setNext(Node next) {
+        this.next = next;
     }
 
     public Node getPrev() {
-        // TODO
-        return null;
+        return prev;
+    }
+
+    public void setPrev(Node prev) {
+        this.prev = prev;
     }
 }
