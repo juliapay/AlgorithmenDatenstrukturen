@@ -5,20 +5,25 @@ import java.util.LinkedList;
 
 public class LibraryHashWithList {
     // TODO: Liste, die je Position aus einer LinkedList besteht
+    private LinkedList<Book>[] list;
 
     public LibraryHashWithList(int size) {
-        // TODO: Logik implementieren
+        list=new LinkedList[size];
     }
 
     public boolean addBook(Book newBook)
     {
-        // TODO: Implementieren
-        return false;
+        int listIndex= getIndexByHashCalc(newBook.getId());
+        if(list[listIndex]==null){
+            list[listIndex]=new LinkedList<Book>();
+        }
+        list[listIndex].add(newBook);
+        return true;
     }
 
     public Book getBookById(int id)
     {
-        // TODO: Implementieren
+
         // Tipp: Beim Durchsuchen der LinkedList könnte ein Iterator hilfreich sein.
         return null;
     }
@@ -31,15 +36,15 @@ public class LibraryHashWithList {
 
     public LinkedList<Book> getLinkedListAtPos(int pos)
     {
-        //TODO: einkommentieren
-        //return list[pos];
-        return null;
+
+        return list[pos];
+
     }
 
     private int getIndexByHashCalc(int id)
     {
-        //TODO: einkommentieren
-        //return id % list.length;
-        return 0;
+
+        return id % list.length;
+
     }
 }

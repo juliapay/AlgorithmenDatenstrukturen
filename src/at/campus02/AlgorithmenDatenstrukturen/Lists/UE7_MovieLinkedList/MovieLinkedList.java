@@ -30,11 +30,83 @@ public class MovieLinkedList {
     }
 
     public void insertMovieTitleAtIndex(String movieTitle, int index) {
-        Node newNode= new Node(movieTitle);
+        Node newNode = new Node(movieTitle);
+
+        // Liste ist leer
+        if (first == null) {
+            first = newNode;
+            last = newNode;
+        }
+        // List ist nicht leer
+        else {
+            // Erste Stelle
+            if (index == 0) {
+                newNode.setNext(first);
+                first.setPrev(newNode);
+                first = newNode;
+            } else {
+                // Vorgänger suchen
+                Node predecessorNode = getMovieAtIndex(index - 1);
+
+                // Vorgänger nicht gefunden
+                if (predecessorNode == null) {
+                    // Index ist nicht korrekt. Deshalb an letzter Stelle einfügen.
+                    predecessorNode = last;
+                }
+
+                Node followingNode = predecessorNode.getNext();
+
+                predecessorNode.setNext(newNode);
+                newNode.setPrev(predecessorNode);
+
+                if (followingNode != null) {
+                    newNode.setNext(followingNode);
+                    followingNode.setPrev(newNode);
+                }
+
+                if (predecessorNode == last)
+                    last = newNode;
+            }
+        }
     }
 
     public void deleteMovieAtIndex(int index) {
-        // TODO
+        // Liste ist leer
+        if (first == null)
+            return;
+            // Liste ist nicht leer
+        else {
+            // First löschen
+            if (index == 0) {
+                Node followingNode = getMovieAtIndex(index + 1);
+                if (followingNode != null) {
+                    followingNode.setPrev(null);
+                    first.setNext(null);
+                }
+
+                if (first == last)
+                    last = null;
+
+                first = followingNode;
+            } else {
+                Node deleteNode = getMovieAtIndex(index);
+
+                if (deleteNode == null)
+                    return;
+
+                Node predecessorNode = deleteNode.getPrev();
+                Node followingNode = deleteNode.getNext();
+
+                predecessorNode.setNext(followingNode);
+                deleteNode.setPrev(null);
+                deleteNode.setNext(null);
+                if (followingNode != null)
+                    followingNode.setPrev(predecessorNode);
+
+                if (deleteNode == last)
+                    last = predecessorNode;
+            }
+        }
     }
 
     public void printList() {
