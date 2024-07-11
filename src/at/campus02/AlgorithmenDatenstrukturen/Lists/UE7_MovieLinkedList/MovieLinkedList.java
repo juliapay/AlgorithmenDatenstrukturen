@@ -2,26 +2,35 @@ package at.campus02.AlgorithmenDatenstrukturen.Lists.UE7_MovieLinkedList;
 
 public class MovieLinkedList {
     // *** Membervariablen ***
-    // TODO
+    private Node first;
+    private Node last;
 
     // *** Methoden ***
     public Node getFirst() {
-        // TODO
-        return null;
+        return first;
     }
 
     public Node getLast() {
-        // TODO
-        return null;
+        return last;
     }
 
     public Node getMovieAtIndex(int index) {
-        // TODO
-        return null;
+        if (first == null) {
+            return null;
+        } else {
+            Node current = first;
+            for (int i = 0; i < index; i++) {
+                if (current.getNext() == null) {
+                    return null;
+                }
+                current = current.getNext();
+            }
+            return current;
+        }
     }
 
     public void insertMovieTitleAtIndex(String movieTitle, int index) {
-        // TODO
+        Node newNode= new Node(movieTitle);
     }
 
     public void deleteMovieAtIndex(int index) {

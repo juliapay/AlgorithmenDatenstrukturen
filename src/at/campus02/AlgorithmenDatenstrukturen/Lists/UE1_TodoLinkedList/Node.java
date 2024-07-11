@@ -2,28 +2,32 @@ package at.campus02.AlgorithmenDatenstrukturen.Lists.UE1_TodoLinkedList;
 
 public class Node {
     // *** Membervariablen ***
-    // TODO
+
+    private String todoText;
+    private Node next;
 
     // *** Konstruktor (optional) ***
 
+    public Node(String todoText) {
+        this.todoText = todoText;
+        this.next = null;
+    }
 
     // *** Getter- & Setter ***
 
     public void setTodoText(String todoText) {
-        // TODO
+        this.todoText = todoText;
     }
 
     public String getTodoText() {
-        // TODO
-        return null;
+        return todoText;
     }
 
     public void setNext(Node next) {
-        // TODO
+        this.next = next;
     }
 
     public Node getNext() {
-        // TODO
-        return null;
+        return next;
     }
 }

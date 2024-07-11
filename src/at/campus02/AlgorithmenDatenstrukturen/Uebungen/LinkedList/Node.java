@@ -1,20 +1,12 @@
 package at.campus02.AlgorithmenDatenstrukturen.Uebungen.LinkedList;
 
 public class Node {
-    private Person person;
     private Node next;
+    private Objekt objekt;
 
-    public Node(Person person) {
-        this.person = person;
+    public Node(Objekt objekt) {
         this.next = next;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
+        this.objekt = objekt;
     }
 
     public Node getNext() {
@@ -23,5 +15,13 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public Objekt getObjekt() {
+        return objekt;
+    }
+
+    public void setObjekt(Objekt objekt) {
+        this.objekt = objekt;
     }
 }
