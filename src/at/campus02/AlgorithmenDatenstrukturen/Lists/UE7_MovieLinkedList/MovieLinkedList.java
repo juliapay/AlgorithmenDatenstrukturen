@@ -30,7 +30,7 @@ public class MovieLinkedList {
     }
 
     public void insertMovieTitleAtIndex(String movieTitle, int index) {
-        // TODO
+        Node newNode= new Node(movieTitle);
     }
 
     public void deleteMovieAtIndex(int index) {
