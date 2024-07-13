@@ -1,4 +1,7 @@
-package at.campus02.AlgorithmenDatenstrukturen.Graph.UE05_ArrayAndListGraph_Loesung;
+package at.campus02.AlgorithmenDatenstrukturen.Uebungen.Graph;
+import at.campus02.AlgorithmenDatenstrukturen.Graph.UE05_ArrayAndListGraph_Loesung.Graph;
+import at.campus02.AlgorithmenDatenstrukturen.Graph.UE05_ArrayAndListGraph_Loesung.WeightedEdge;
+
 import java.util.ArrayList;
 import java.util.List;
 

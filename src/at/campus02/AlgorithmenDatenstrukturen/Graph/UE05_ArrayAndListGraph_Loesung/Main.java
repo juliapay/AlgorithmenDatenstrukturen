@@ -1,5 +1,7 @@
 package at.campus02.AlgorithmenDatenstrukturen.Graph.UE05_ArrayAndListGraph_Loesung;
 
+import at.campus02.AlgorithmenDatenstrukturen.Uebungen.Graph.ListGraph;
+
 import java.util.List;
 
 public class Main {

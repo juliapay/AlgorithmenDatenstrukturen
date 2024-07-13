@@ -1,14 +1,14 @@
-package at.campus02.AlgorithmenDatenstrukturen.Pruefung.P4_BreadthSearch;
+package at.campus02.AlgorithmenDatenstrukturen.Uebungen.Graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ArrayGraph {
+public class ArrayGraphSEARCH {
     private int[][] graph;
     private int size;
 
-    public ArrayGraph(int size) {
+    public ArrayGraphSEARCH(int size) {
         graph = new int[size][size];
         this.size = size;
     }
@@ -51,10 +51,7 @@ public class ArrayGraph {
 
         visited.add(startVertex);
         for (int i = 0; i < size; i++) {
-            //wo gibts eine Verbindung siehe oben
-            //        graph[from][to] = 1;
-            //        graph[to][from] = 1;
-            //       also bei Verbindung ist eine 1 eingetrgen
+
             if (graph[startVertex][i] == 1) {
                 if (!visited.contains(i)) {
                     performDepthSearch(i, visited);

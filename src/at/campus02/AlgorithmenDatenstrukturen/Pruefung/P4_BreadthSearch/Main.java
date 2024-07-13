@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayGraph graph = new ArrayGraph(10);
+        ArrayGraphSEARCH graph = new ArrayGraphSEARCH(10);
         ArrayList<Integer> visited = new ArrayList<Integer>();
 
         graph.addEdge(1,0);
