@@ -4,7 +4,7 @@ public class HashFunction {
     private String[] array;
     private static final String TOMPSTONE = "####12345#####++++----";
 
-
+    //HASHCODE ADD LINEAR
     public void add(String letters) {
         int baseValue = Math.abs(letters.hashCode());
 
@@ -20,7 +20,7 @@ public class HashFunction {
             }
         }
     }
-
+    //HASHCODE REMOVE LINEAR
     public boolean remove(String letters) {
         int baseValue = Math.abs(letters.hashCode());
         for (int i = 0; i < array.length; i++) {
@@ -32,7 +32,7 @@ public class HashFunction {
         }
         return false;
     }
-
+    //HASHCODE SEARCH LINEAR
     public boolean isElementInArray(String letters) {
         int baseValue = Math.abs(letters.hashCode());
         for (int i = 0; i < array.length; i++) {
@@ -47,7 +47,7 @@ public class HashFunction {
         }
         return false;
     }
-
+    //HASHCODE ADD DOUBLEHASHING
     public void addWithDoubleHashing(String letters) {
 
         int baseValue = Math.abs(letters.hashCode());
@@ -66,7 +66,7 @@ public class HashFunction {
         }
 
     }
-
+    //HASHCODE REMOVE DOUBLEHASHING
     public boolean removeWithDoubleHashing(String letters) {
 
         int baseValue = Math.abs(letters.hashCode());
@@ -83,6 +83,7 @@ public class HashFunction {
         }
         return false;
     }
+    //HASHCODE SEARCH DOUBLEHASHING
     public boolean isElementInArrayWithDoubleHashing(String letters){
         int baseValue=Math.abs(letters.hashCode());
         int h1= baseValue% array.length;

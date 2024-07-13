@@ -33,11 +33,12 @@ public class ListGraph implements Graph {
 		WeightedEdge weightedEdge = findEdge(v1, v2);
 		return weightedEdge.weight;
 	}
-
+	// GRAPH ADD EDGE WEIGHTED
 	public void addEdge(int v1, int v2) {
 		addEdge(v1, v2, 1);
 	}
 	
+	// GRAPH ADD EDGE WEIGHTED
 	public void addEdge(int v1, int v2, int weight) {
 		graph[v1].add(new WeightedEdge(v1, v2, weight));
 		if (!directed) {

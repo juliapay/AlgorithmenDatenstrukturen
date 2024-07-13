@@ -21,12 +21,32 @@ public class ArrayGraph {
         graph[to][from] = 1;
         return true;
     }
-
+    // GRAPH BRREITENSUCHE
     public void performBreadthSearch(int startVertex, ArrayList<Integer> visited) {
-        // TODO: Lösung implementieren
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visitedArray = new boolean[size];
 
-    }
+        queue.add(startVertex);
+        visitedArray[startVertex] = true;
 
+        while (!queue.isEmpty()) {
+            int vertex = queue.remove();
+            visited.add(vertex);
+
+            for (int i = 0; i < size; i++) {
+                if (graph[vertex][i] == 1 && !visitedArray[i]) {
+                    //  graph[vertex][i] > 0 && !visitedArray[i]
+                    // wenn edges are weighted
+                    queue.add(startVertex);
+                    visitedArray[startVertex] = true;
+                }
+                    queue.add(i);
+                    visitedArray[i] = true;
+                }
+            }
+        }
+
+    // GRAPH TIEFENSUCHE
     public void performDepthSearch(int startVertex, ArrayList<Integer> visited) {
 
         visited.add(startVertex);

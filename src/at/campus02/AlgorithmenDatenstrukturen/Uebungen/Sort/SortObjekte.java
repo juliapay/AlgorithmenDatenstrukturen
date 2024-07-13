@@ -1,8 +1,8 @@
 package at.campus02.AlgorithmenDatenstrukturen.Uebungen.Sort;
 
 public class SortObjekte {
+    //INSERTION SORT
     public void sortObjektePerNumberInsertion(Objekt[] objekts){
-        //INSERTION SORT
 
         for (int i = 0; i <objekts.length ; i++) {
 
@@ -17,8 +17,8 @@ public class SortObjekte {
             }
         }
     }
+    // BUBBLE SORT
     public void sortObjektPerNumberBubble(Objekt[] objekts){
-        // BUBBLE SORT
 
         boolean swapped=false;
         for (int i = 0; i < objekts.length-1; i++) {

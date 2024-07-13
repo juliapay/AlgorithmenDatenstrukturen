@@ -20,9 +20,10 @@ public class Queue {
         this.rear = rear;
     }
 
+    //QUEUE ADD REAR
     public void enqueue(String name) {
         Node newNode = new Node(name);
-        if (front == null) {
+        if (rear == null) {
             front = newNode;
             rear = newNode;
         } else {
@@ -30,7 +31,7 @@ public class Queue {
             rear = newNode;
         }
     }
-
+    //QUEUE REMOVE FRONT
     public String dequeue() {
         Node current = front;
         if (front == rear) {
@@ -42,14 +43,14 @@ public class Queue {
         }
         return current.getName();
     }
-
+    //QUEUE COUNT
     public int getcount() {
         int counter = 0;
         Node current = front;
 
         while (current.getNext() != null) {
-            current = current.getNext();
             counter++;
+            current = current.getNext();
         }
         return counter;
     }

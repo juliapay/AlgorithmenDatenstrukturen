@@ -7,6 +7,7 @@ public class Tree {
         return root;
     }
 
+
     public Book searchPerLoop(int bookId) {
         Node current = root;
         //Fall 1 Baum ist leer

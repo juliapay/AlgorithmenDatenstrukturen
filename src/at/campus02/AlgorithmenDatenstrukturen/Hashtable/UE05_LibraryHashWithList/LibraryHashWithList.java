@@ -10,28 +10,40 @@ public class LibraryHashWithList {
     public LibraryHashWithList(int size) {
         list=new LinkedList[size];
     }
-
+    //HASHTABLE ADD MIT LISTE
     public boolean addBook(Book newBook)
     {
         int listIndex= getIndexByHashCalc(newBook.getId());
         if(list[listIndex]==null){
             list[listIndex]=new LinkedList<Book>();
         }
-        list[listIndex].add(newBook);
-        return true;
+        return list[listIndex].add(newBook);
     }
-
+    //HASHTABLE SEARCH MIT LISTE
     public Book getBookById(int id)
     {
+        Book currentBook;
+        LinkedList<Book> linkedList = list[getIndexByHashCalc(id)];
+        Iterator it = linkedList.iterator();
+        while (it.hasNext())
+        {
+            currentBook = (Book)it.next();
+            if (currentBook.getId() == id)
+                return currentBook;
+        }
 
-        // Tipp: Beim Durchsuchen der LinkedList könnte ein Iterator hilfreich sein.
         return null;
     }
-
+    //HASHTABLE REMOVE MIT LISTE
     public boolean removeBook(int id)
     {
-        // TODO: Implementieren
-        return false;
+        Book book = getBookById(id);
+        if (book == null)
+            return false;
+
+        int listIndex = getIndexByHashCalc(book.getId());
+        LinkedList<Book> linkedList = list[listIndex];
+        return linkedList.remove(book);
     }
 
     public LinkedList<Book> getLinkedListAtPos(int pos)

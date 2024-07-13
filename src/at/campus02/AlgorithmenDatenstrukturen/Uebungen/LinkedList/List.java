@@ -19,7 +19,7 @@ public class List {
     public void setLast(Node last) {
         this.last = last;
     }
-
+    //LINKED LIST ADD LAST
     public void addObjektAtLastPosition(Objekt objekt) {
         Node newNode = new Node(objekt);
         if (first == null) {
@@ -30,6 +30,7 @@ public class List {
             last = newNode;
         }
     }
+    //LINKED LIST ADD FIRST
     public void AddAtFirstPosition(Objekt objekt){
         Node newNode=new Node(objekt);
         if(first==null){
@@ -40,7 +41,7 @@ public class List {
             first=newNode;
         }
     }
-
+    //LINKED LIST ADD POSITION
     public void addAtPosition(Objekt objekt, int position) {
         Node newNode = new Node(objekt);
         Node current = first;
@@ -59,6 +60,38 @@ public class List {
             current.setNext(newNode);
         }
     }
+    //LINKED LIST DELETE FIRST
+    public void deleteAtFirstPosition(){
+        if(first==null)
+            return;
+
+        if(first==last){
+            first=null;
+            last=null;
+        }else {
+            first=first.getNext();
+        }
+    }
+    //LINKED LIST DELETE LAST
+    public void deleteAtLastPosition(){
+        if(first==null)
+            return;
+
+        if(first==last){
+            first=null;
+            last=null;
+        }else{
+            Node prevNode=first;
+
+            while (prevNode.getNext()!=last)
+                //(prevNode.getNext().getNext()!=null
+                prevNode=prevNode.getNext();
+
+            prevNode.setNext(null);
+            last=prevNode;
+        }
+    }
+    //LINKED LIST DELETE POSITION
     public void deleteAtPosition(int position){
         Node current=first;
         if(first==null){
@@ -84,6 +117,7 @@ public class List {
             }
         }
     }
+    //LINKED LIST SEARCH POSITION
     public Objekt searchForObjektAtPosition(int position){
         Node current= first;
         for (int i = 0; i < position; i++) {

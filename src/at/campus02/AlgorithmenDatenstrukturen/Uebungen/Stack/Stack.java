@@ -10,6 +10,7 @@ public class Stack {
     public void setTop(Node top) {
         this.top = top;
     }
+    //STACK PUSH ADD TOP
     public void push(String name){
         Node newNode= new Node(name);
         if(top==null){
@@ -19,6 +20,7 @@ public class Stack {
             top=newNode;
         }
     }
+    //STACK POP REMOVE TOP
     public String pop(){
         Node current=top;
         if(top==null){
@@ -28,12 +30,14 @@ public class Stack {
             return current.getName();
         }
     }
+    //STACK COUNT
     public int getCount(){
         int counter=0;
         Node current=top;
         while(current.getNext()!=null){
-            current=current.getNext();
             counter++;
+            current=current.getNext();
+
         }
         return counter;
     }
