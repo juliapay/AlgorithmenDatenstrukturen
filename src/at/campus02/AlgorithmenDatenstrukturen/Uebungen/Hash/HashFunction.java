@@ -1,7 +1,11 @@
 package at.campus02.AlgorithmenDatenstrukturen.Uebungen.Hash;
 
+import java.util.LinkedList;
+
 public class HashFunction {
     private String[] array;
+    private LinkedList<String>[] list;
+
     private static final String TOMPSTONE = "####12345#####++++----";
 
     //HASHCODE ADD LINEAR
@@ -97,6 +101,15 @@ public class HashFunction {
             }
         }
         return false;
+    }
+    public boolean addWithListHashfunction(String element){
+        int baseValue= Math.abs(element.hashCode());
+        int pos= baseValue%list.length;
+
+        if(list[pos]==null){
+            list[pos]=new LinkedList<String>();
+        }
+        return list[pos].add(element);
     }
 
 }

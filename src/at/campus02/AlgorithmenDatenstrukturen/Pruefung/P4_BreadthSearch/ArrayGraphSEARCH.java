@@ -34,17 +34,15 @@ public class ArrayGraphSEARCH {
             visited.add(vertex);
 
             for (int i = 0; i < size; i++) {
+                // Prüfen, ob eine Kante existiert und der Knoten nicht besucht wurde
                 if (graph[vertex][i] == 1 && !visitedArray[i]) {
-                    //  graph[vertex][i] > 0 && !visitedArray[i]
-                    // wenn edges are weighted
-                    queue.add(startVertex);
-                    visitedArray[startVertex] = true;
-                }
                     queue.add(i);
                     visitedArray[i] = true;
                 }
             }
         }
+    }
+
 
     // GRAPH TIEFENSUCHE
     public void performDepthSearch(int startVertex, ArrayList<Integer> visited) {

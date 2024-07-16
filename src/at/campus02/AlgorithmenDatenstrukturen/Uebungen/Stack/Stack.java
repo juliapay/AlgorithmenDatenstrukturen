@@ -34,7 +34,7 @@ public class Stack {
     public int getCount(){
         int counter=0;
         Node current=top;
-        while(current.getNext()!=null){
+        while(current!=null){
             counter++;
             current=current.getNext();
 

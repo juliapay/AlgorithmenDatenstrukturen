@@ -23,7 +23,7 @@ public class DoubleLinkedList {
         } else {
             newNode.setNext(first);
             first.setPrevious(newNode);
-            newNode.setNext(first);
+            newNode.setPrevious(null);//muss nicht sein
             first = newNode;
         }
     }
@@ -37,6 +37,7 @@ public class DoubleLinkedList {
         } else {
             newNode.setPrevious(last);
             last.setNext(newNode);
+            newNode.setNext(null);//muss nicht sein
             last = newNode;
         }
     }
@@ -47,10 +48,8 @@ public class DoubleLinkedList {
             first = null;
             last = null;
         } else {
-            Node predecessor = last.getPrevious();
-            last.setPrevious(null);
-            predecessor.setNext(null);
-            last = predecessor;
+            last = last.getPrevious();
+            last.setNext(null);
         }
     }
 
@@ -60,10 +59,8 @@ public class DoubleLinkedList {
             first = null;
             last = null;
         } else {
-            Node current = first.getNext();
-            current.setPrevious(null);
-            first.setNext(null);
-            first = current;
+            first = first.getNext();
+            first.setPrevious(null);
         }
     }
 
