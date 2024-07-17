@@ -50,8 +50,7 @@ public class INSERT {
 
         if (nodeToDelete == last) {
             last = predecessorNode;
-        }
-
+        }has
         nodeToDelete.setPrev(null);
         nodeToDelete.setNext(null);
     }
@@ -102,60 +101,47 @@ public class INSERT {
 
     //HASHTABLE MIT LISTE
     /*
-    private LinkedList<Book>[] list;
+
+        private LinkedList<String>[] elements;
     public HashFunktionMitListe(int size) {
         list=new LinkedList[size];
     }
     //HASHTABLE ADD MIT LISTE
-    public boolean addObject(Book newBook)
-    {
-        int listIndex= getIndexByHashCalc(newBook.getId());
-        if(list[listIndex]==null){
-            list[listIndex]=new LinkedList<Book>();
-        }
-        return list[listIndex].add(newBook);
-    }
-    //HASHTABLE SEARCH MIT LISTE
-    public Book getBookById(int id)
-    {
-        Book currentBook;
-        LinkedList<Book> linkedList = list[getIndexByHashCalc(id)];
-        Iterator it = linkedList.iterator();
-        while (it.hasNext())
-        {
-            currentBook = (Book)it.next();
-            if (currentBook.getId() == id)
-                return currentBook;
-        }
 
-        return null;
+        public boolean addWithListHashing(String element){
+        int baseValue=Math.abs(element.hashCode());
+        int indexForList= baseValue%list.length;
+
+        if(elements[indexForList]==null){
+            elements[indexForList]=new LinkedList<>();
+        }
+       return elements[indexForList].add(element);
+    }
+
+    //HASHTABLE SEARCH MIT LISTE
+    public boolean searchWithListHashing(String element) {
+        int baseValue = Math.abs(element.hashCode());
+        int indexForList = baseValue % elements.length;
+
+        if (elements[indexForList] != null && elements[indexForList].contains(element)) {
+            return true;
+        } else {
+            return false;
+        }
     }
     //HASHTABLE REMOVE MIT LISTE
-    public boolean removeBook(int id)
-    {
-        Book book = getBookById(id);
-        if (book == null)
-            return false;
+       public boolean removeWithList(String element){
 
-        int listIndex = getIndexByHashCalc(book.getId());
-        LinkedList<Book> linkedList = list[listIndex];
-        return linkedList.remove(book);
+        int baseValue= Math.abs(element.hashCode());
+        int indexForList= baseValue%elements.length;
+
+        if(elements[indexForList]!=null&& elements[indexForList].contains(element)){
+            elements[indexForList].remove(element);
+            return  true;
+        }
+        return false;
     }
 
-    public LinkedList<Book> getLinkedListAtPos(int pos)
-    {
-
-        return list[pos];
-
-    }
-
-    private int getIndexByHashCalc(int id)
-    {
-
-        return id % list.length;
-
-    }
-}
 */
 //---------------------------------------------------------------
     //GRAPH ADD REMOVE
@@ -258,19 +244,22 @@ public class INSERT {
     /*
     //BREITENSUCHE LIST<INTEGER>
     public List<Integer> performBreadthSearch(int startVertex) {
-        Queue<Integer> queue = new LinkedList<>();
+          Queue<Integer> queue = new LinkedList<>();
         ArrayList<Integer> visited = new ArrayList<>();
-
+        boolean[] visitedArray = new boolean[numVertices];
         queue.add(startVertex);
+
 
         while (!queue.isEmpty()) {
 
             int currentVertex = queue.remove();
+            visited.add(currentVertex);
 
-            if (!visited.contains(currentVertex)) {
-                visited.add(currentVertex);
-                for (Edge e : graph[currentVertex]) {
+
+            for (Edge e : graph[currentVertex]) {
+                if (!visitedArray[e.toVertex]) {
                     queue.add(e.toVertex);
+                    visitedArray[e.toVertex] = true;
                 }
             }
         }
