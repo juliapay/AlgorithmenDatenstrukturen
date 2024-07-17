@@ -13,6 +13,7 @@ public class ArrayGraphSEARCH {
         this.size = size;
     }
 
+
     public boolean addEdge(int from, int to) {
         if ((from >= size) || (to >= size))
             return false;
@@ -21,6 +22,7 @@ public class ArrayGraphSEARCH {
         graph[to][from] = 1;
         return true;
     }
+
     // GRAPH BRREITENSUCHE
     public void performBreadthSearch(int startVertex, ArrayList<Integer> visited) {
         Queue<Integer> queue = new LinkedList<>();
@@ -42,6 +44,33 @@ public class ArrayGraphSEARCH {
             }
         }
     }
+
+    public void perf(int startVertex) {
+        Queue<Integer> queue= new LinkedList<>();
+        ArrayList<Integer> visited= new ArrayList<>();
+        boolean[] hasVisited= new boolean[size];
+
+        queue.add(startVertex);
+        hasVisited[startVertex]=true;
+
+        while(!queue.isEmpty()){
+
+            int vertex= queue.remove();
+            visited.add(vertex);
+
+            for (int i = 0; i < size; i++) {
+
+                if(!hasVisited[i]&&graph[vertex][i]>0){
+
+                    queue.add(i);
+                    hasVisited[i]=true;
+                }
+            }
+        }
+    }
+
+
+
 
 
     // GRAPH TIEFENSUCHE

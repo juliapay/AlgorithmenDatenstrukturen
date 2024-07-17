@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class HashFunktionMitListe {
+    //HASHTABLE MIT LISTE
+
     private LinkedList<Book>[] list;
     public HashFunktionMitListe(int size) {
         list=new LinkedList[size];
