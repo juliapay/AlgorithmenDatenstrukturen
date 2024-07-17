@@ -4,47 +4,60 @@ public class INSERT {
 
     //DOUBLELINKED LIST REMOVE ANY POSITION
     /*
-    public void removeNodeFromPosition(int position) {
-        Node current = first;
-        if (first == null) {
+   public void deleteAtPosition(int position) {
+    if (first == null) {
+        return;
+    }
+
+    Node current = first;
+
+    if (position == 0) {
+
+        if (first == last) {
+
+            first = null;
+            last = null;
+        } else {
+            first = first.getNext();
+            if (first != null) {
+                first.setPrev(null);
+            }
+        }
+    } else {
+
+        for (int i = 0; i < position; i++) {
+            if (current.getNext() == null) {
+                return;
+            }
+            current = current.getNext();
+        }
+
+        Node nodeToDelete = current;
+        if (nodeToDelete == null) {
             return;
         }
-        if (position == 0) {
-            if (first == last) {
-                first = null;
-                last = null;
-            } else {
-                first.getNext().setPrevious(null);
-                first.setNext(null);
-                first = current;
-            }
-        } else {
-            for (int i = 0; i < position - 1; i++) {
 
-                if (current.getNext() == null)
-                    return;
+        Node predecessorNode = nodeToDelete.getPrev();
+        Node followingNode = nodeToDelete.getNext();
 
-                current = current.getNext();
-            }
-            Node nodeToDelete = current;
-            if (nodeToDelete == null)
-                return;
-
-            Node predecessorNode = nodeToDelete.getPrevious();
-            Node followingNode = nodeToDelete.getNext();
-
+        if (predecessorNode != null) {
             predecessorNode.setNext(followingNode);
-
-            nodeToDelete.setPrevious(null);
-            nodeToDelete.setNext(null);
-
-            if (followingNode != null)
-                followingNode.setPrevious(predecessorNode);
-
-            if (nodeToDelete == last)
-                last = predecessorNode;
         }
+
+        if (followingNode != null) {
+            followingNode.setPrev(predecessorNode);
+        }
+
+        if (nodeToDelete == last) {
+            last = predecessorNode;
+        }
+
+        nodeToDelete.setPrev(null);
+        nodeToDelete.setNext(null);
     }
+}
+
+
 
     //DOUBLELINKED LIST SWAP
     public void swapAdjacentNodes(int position) {
